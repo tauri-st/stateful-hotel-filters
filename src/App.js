@@ -7,9 +7,8 @@ class App extends Component {
   toggleFilter = (clickedFilterKey) => {
     let newFilters;
     // see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes to see how the .includes array method works
-    const alreadySelected = this.state.selectedFilters.includes(
-      clickedFilterKey
-    );
+    const alreadySelected =
+      this.state.selectedFilters.includes(clickedFilterKey);
     if (alreadySelected) {
       // see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter to see how the .filter array method works
       newFilters = this.state.selectedFilters.filter(
@@ -24,7 +23,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Filters selectedFilters={this.state.selectedFilters} />
+        <Filters
+          selectedFilters={this.state.selectedFilters}
+          toggleFilter={this.toggleFilter}
+        />
         <Hotels selectedFilters={this.state.selectedFilters} />
       </div>
     );
