@@ -5,10 +5,6 @@ const getMatchCount = (filterKey) =>
   hotels.filter((hotel) => hotel[filterKey]).length;
 
 const Filter = (props) => {
-  /* it is not enough to just call props.toggleFilter when the input 
-  is clicked, we need to call props.toggleFilter with an argument 
-  that indicates WHICH input has been clicked, so we create this
-  onChange function here for each Filter component that is rendered */
   const onChange = () => props.toggleFilter(props.filter.key);
   const matchCount = getMatchCount(props.filter.key);
   return (
